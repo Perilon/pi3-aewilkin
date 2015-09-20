@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <analysisEngineDescription xmlns="http://uima.apache.org/resourceSpecifier">
   <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
-  <primitive>true</primitive>  <annotatorImplementationName>type.TokenAnnotator</annotatorImplementationName>
+  <primitive>true</primitive>  <annotatorImplementationName>TokenAnnotator</annotatorImplementationName>
   <analysisEngineMetaData>
     <name>TokenAnnotatorDescriptor</name>
     <description/>
