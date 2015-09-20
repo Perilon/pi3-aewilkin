@@ -10,8 +10,8 @@ import org.apache.uima.jcas.cas.TOP_Type;
 
 
 /** Stores the information about an answer.
- * Updated by JCasGen Sun Sep 20 17:33:34 EDT 2015
- * XML source: /home/perilon/git/pi3-aewilkin/pi3-aewilkin/desc/aaeDescriptor.xml
+ * Updated by JCasGen Sun Sep 20 18:24:07 EDT 2015
+ * XML source: /home/perilon/git/pi3-aewilkin/pi3-aewilkin/src/main/resources/typeSystem.xml
  * @generated */
 public class Answer extends ComponentAnnotation {
   /** @generated
@@ -117,9 +117,7 @@ public class Answer extends ComponentAnnotation {
     if (Answer_Type.featOkTst && ((Answer_Type)jcasType).casFeat_sentence == null)
       jcasType.jcas.throwFeatMissing("sentence", "type.Answer");
     jcasType.ll_cas.ll_setStringValue(addr, ((Answer_Type)jcasType).casFeatCode_sentence, v);}    
-   
-    
-  //*--------------*
+    //*--------------*
   //* Feature: label
 
   /** getter for label - gets This stores a gold standard label of this answer.  'True' means that it is correct; otherwise, it is incorrect.
@@ -139,6 +137,8 @@ public class Answer extends ComponentAnnotation {
     if (Answer_Type.featOkTst && ((Answer_Type)jcasType).casFeat_label == null)
       jcasType.jcas.throwFeatMissing("label", "type.Answer");
     jcasType.ll_cas.ll_setBooleanValue(addr, ((Answer_Type)jcasType).casFeatCode_label, v);}    
-  }
+   
+    
+}
 
     

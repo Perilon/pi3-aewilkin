@@ -33,9 +33,10 @@ public class TokenAnnotator extends JCasAnnotator_ImplBase {
       Matcher matcher = mTokenPattern.matcher(answer.getSentence());
       int pos = 0;
       while (matcher.find(pos)) {
+//        System.out.println(matcher);
         Token token = new Token(aJCas);
-        token.setBegin(matcher.start());
-        token.setEnd(matcher.end());
+        token.setBegin(answer.getBegin() + matcher.start());
+        token.setEnd(answer.getBegin() + matcher.end());
         token.addToIndexes();
         pos = matcher.end();
       }
@@ -49,9 +50,10 @@ public class TokenAnnotator extends JCasAnnotator_ImplBase {
       Matcher matcher = mTokenPattern.matcher(question.getSentence());
       int pos = 0;
       while (matcher.find(pos)) {
+//        System.out.println(matcher);
         Token token = new Token(aJCas);
-        token.setBegin(matcher.start());
-        token.setEnd(matcher.end());
+        token.setBegin(question.getBegin() + matcher.start());
+        token.setEnd(question.getBegin() + matcher.end());
         token.addToIndexes();
         pos = matcher.end();
       }

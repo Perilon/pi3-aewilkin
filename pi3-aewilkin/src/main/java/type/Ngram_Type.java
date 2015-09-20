@@ -13,7 +13,7 @@ import org.apache.uima.cas.impl.FeatureImpl;
 import org.apache.uima.cas.Feature;
 
 /** Stores the information about an n-gram.
- * Updated by JCasGen Sun Sep 20 17:33:34 EDT 2015
+ * Updated by JCasGen Sun Sep 20 18:24:07 EDT 2015
  * @generated */
 public class Ngram_Type extends ComponentAnnotation_Type {
   /** @generated 

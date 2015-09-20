@@ -10,7 +10,7 @@ import java.util.regex.Pattern;
 public class AnswerAnnotator extends JCasAnnotator_ImplBase {
 
   private Pattern mAnswerPattern = 
-          Pattern.compile("(A[0-9]+) ([0-1]) (.*).");
+          Pattern.compile("(A[0-9]+) ([0-1])([ \t]+)(.*).");
   
   public void process(JCas aJCas) {
     
@@ -22,8 +22,8 @@ public class AnswerAnnotator extends JCasAnnotator_ImplBase {
       // match found - create the match as annotation in 
       // the JCas with some additional meta information
       Answer annotation = new Answer(aJCas);
-      annotation.setBegin(matcher.start());
-      annotation.setEnd(matcher.end());
+      annotation.setBegin(matcher.start(4));
+      annotation.setEnd(matcher.end(4));
       
       if (matcher.group(2).equals("0")) {
         annotation.setLabel(false);
@@ -32,8 +32,9 @@ public class AnswerAnnotator extends JCasAnnotator_ImplBase {
       }
       
       annotation.setId(matcher.group(1));
-      
-      annotation.setSentence(matcher.group(3));
+//      matcher.start(4)
+//      matcher.end(4)
+      annotation.setSentence(matcher.group(4));
       
       
       annotation.addToIndexes();

@@ -10,7 +10,10 @@ import java.util.regex.Pattern;
 public class QuestionAnnotator extends JCasAnnotator_ImplBase {
 
   private Pattern mQuestionPattern = 
-          Pattern.compile("Q (.*)");
+//          Pattern.compile("Q (.*)");
+//  Pattern.compile("(A[0-9]+) ([0-1])([ \t]+)(.*).");
+          Pattern.compile("(Q)([ \t]+)(.*)\\?");
+
   
   public void process(JCas aJCas) {
     
@@ -22,9 +25,9 @@ public class QuestionAnnotator extends JCasAnnotator_ImplBase {
       // match found - create the match as annotation in 
       // the JCas with some additional meta information
       Question annotation = new Question(aJCas);
-      annotation.setBegin(matcher.start());
-      annotation.setEnd(matcher.end());
-      annotation.setSentence(matcher.group(1));
+      annotation.setBegin(matcher.start(3));
+      annotation.setEnd(matcher.end(3));
+      annotation.setSentence(matcher.group(3));
       annotation.addToIndexes();
       pos = matcher.end();
     }

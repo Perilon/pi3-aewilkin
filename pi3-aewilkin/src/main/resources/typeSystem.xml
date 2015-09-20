@@ -73,14 +73,14 @@
           <rangeTypeName>uima.cas.String</rangeTypeName>
         </featureDescription>
         <featureDescription>
-          <name>sentence</name>
-          <description/>
-          <rangeTypeName>uima.cas.String</rangeTypeName>
-        </featureDescription>
-        <featureDescription>
           <name>label</name>
           <description>This stores a gold standard label of this answer.  'True' means that it is correct; otherwise, it is incorrect.</description>
           <rangeTypeName>uima.cas.Boolean</rangeTypeName>
+        </featureDescription>
+      <featureDescription>
+          <name>sentence</name>
+          <description/>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
         </featureDescription>
       </features>
     </typeDescription>
