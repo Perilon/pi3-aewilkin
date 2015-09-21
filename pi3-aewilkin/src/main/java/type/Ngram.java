@@ -14,7 +14,7 @@ import org.apache.uima.jcas.cas.FSList;
 
 
 /** Stores the information about an n-gram.
- * Updated by JCasGen Mon Sep 21 04:02:52 EDT 2015
+ * Updated by JCasGen Mon Sep 21 11:56:31 EDT 2015
  * XML source: /home/perilon/git/pi3-aewilkin/pi3-aewilkin/src/main/resources/typeSystem.xml
  * @generated */
 public class Ngram extends ComponentAnnotation {

@@ -12,8 +12,8 @@ import org.apache.uima.cas.Type;
 import org.apache.uima.cas.impl.FeatureImpl;
 import org.apache.uima.cas.Feature;
 
-/** Stores a question and its associated answer candidates.
- * Updated by JCasGen Mon Sep 21 02:26:32 EDT 2015
+/** 
+ * Updated by JCasGen Mon Sep 21 11:56:31 EDT 2015
  * @generated */
 public class InputDocument_Type extends ComponentAnnotation_Type {
   /** @generated 
@@ -70,26 +70,101 @@ public class InputDocument_Type extends ComponentAnnotation_Type {
   
  
   /** @generated */
-  final Feature casFeat_answers;
+  final Feature casFeat_answersArray;
   /** @generated */
-  final int     casFeatCode_answers;
+  final int     casFeatCode_answersArray;
   /** @generated
    * @param addr low level Feature Structure reference
    * @return the feature value 
    */ 
-  public int getAnswers(int addr) {
-        if (featOkTst && casFeat_answers == null)
-      jcas.throwFeatMissing("answers", "type.InputDocument");
-    return ll_cas.ll_getRefValue(addr, casFeatCode_answers);
+  public int getAnswersArray(int addr) {
+        if (featOkTst && casFeat_answersArray == null)
+      jcas.throwFeatMissing("answersArray", "type.InputDocument");
+    return ll_cas.ll_getRefValue(addr, casFeatCode_answersArray);
   }
   /** @generated
    * @param addr low level Feature Structure reference
    * @param v value to set 
    */    
-  public void setAnswers(int addr, int v) {
-        if (featOkTst && casFeat_answers == null)
-      jcas.throwFeatMissing("answers", "type.InputDocument");
-    ll_cas.ll_setRefValue(addr, casFeatCode_answers, v);}
+  public void setAnswersArray(int addr, int v) {
+        if (featOkTst && casFeat_answersArray == null)
+      jcas.throwFeatMissing("answersArray", "type.InputDocument");
+    ll_cas.ll_setRefValue(addr, casFeatCode_answersArray, v);}
+    
+   /** @generated
+   * @param addr low level Feature Structure reference
+   * @param i index of item in the array
+   * @return value at index i in the array 
+   */
+  public int getAnswersArray(int addr, int i) {
+        if (featOkTst && casFeat_answersArray == null)
+      jcas.throwFeatMissing("answersArray", "type.InputDocument");
+    if (lowLevelTypeChecks)
+      return ll_cas.ll_getRefArrayValue(ll_cas.ll_getRefValue(addr, casFeatCode_answersArray), i, true);
+    jcas.checkArrayBounds(ll_cas.ll_getRefValue(addr, casFeatCode_answersArray), i);
+  return ll_cas.ll_getRefArrayValue(ll_cas.ll_getRefValue(addr, casFeatCode_answersArray), i);
+  }
+   
+  /** @generated
+   * @param addr low level Feature Structure reference
+   * @param i index of item in the array
+   * @param v value to set
+   */ 
+  public void setAnswersArray(int addr, int i, int v) {
+        if (featOkTst && casFeat_answersArray == null)
+      jcas.throwFeatMissing("answersArray", "type.InputDocument");
+    if (lowLevelTypeChecks)
+      ll_cas.ll_setRefArrayValue(ll_cas.ll_getRefValue(addr, casFeatCode_answersArray), i, v, true);
+    jcas.checkArrayBounds(ll_cas.ll_getRefValue(addr, casFeatCode_answersArray), i);
+    ll_cas.ll_setRefArrayValue(ll_cas.ll_getRefValue(addr, casFeatCode_answersArray), i, v);
+  }
+ 
+ 
+  /** @generated */
+  final Feature casFeat_answer;
+  /** @generated */
+  final int     casFeatCode_answer;
+  /** @generated
+   * @param addr low level Feature Structure reference
+   * @return the feature value 
+   */ 
+  public int getAnswer(int addr) {
+        if (featOkTst && casFeat_answer == null)
+      jcas.throwFeatMissing("answer", "type.InputDocument");
+    return ll_cas.ll_getRefValue(addr, casFeatCode_answer);
+  }
+  /** @generated
+   * @param addr low level Feature Structure reference
+   * @param v value to set 
+   */    
+  public void setAnswer(int addr, int v) {
+        if (featOkTst && casFeat_answer == null)
+      jcas.throwFeatMissing("answer", "type.InputDocument");
+    ll_cas.ll_setRefValue(addr, casFeatCode_answer, v);}
+    
+  
+ 
+  /** @generated */
+  final Feature casFeat_answersList;
+  /** @generated */
+  final int     casFeatCode_answersList;
+  /** @generated
+   * @param addr low level Feature Structure reference
+   * @return the feature value 
+   */ 
+  public int getAnswersList(int addr) {
+        if (featOkTst && casFeat_answersList == null)
+      jcas.throwFeatMissing("answersList", "type.InputDocument");
+    return ll_cas.ll_getRefValue(addr, casFeatCode_answersList);
+  }
+  /** @generated
+   * @param addr low level Feature Structure reference
+   * @param v value to set 
+   */    
+  public void setAnswersList(int addr, int v) {
+        if (featOkTst && casFeat_answersList == null)
+      jcas.throwFeatMissing("answersList", "type.InputDocument");
+    ll_cas.ll_setRefValue(addr, casFeatCode_answersList, v);}
     
   
 
@@ -109,8 +184,16 @@ public class InputDocument_Type extends ComponentAnnotation_Type {
     casFeatCode_question  = (null == casFeat_question) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_question).getCode();
 
  
-    casFeat_answers = jcas.getRequiredFeatureDE(casType, "answers", "uima.cas.FSList", featOkTst);
-    casFeatCode_answers  = (null == casFeat_answers) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_answers).getCode();
+    casFeat_answersArray = jcas.getRequiredFeatureDE(casType, "answersArray", "uima.cas.FSArray", featOkTst);
+    casFeatCode_answersArray  = (null == casFeat_answersArray) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_answersArray).getCode();
+
+ 
+    casFeat_answer = jcas.getRequiredFeatureDE(casType, "answer", "type.Answer", featOkTst);
+    casFeatCode_answer  = (null == casFeat_answer) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_answer).getCode();
+
+ 
+    casFeat_answersList = jcas.getRequiredFeatureDE(casType, "answersList", "uima.cas.FSList", featOkTst);
+    casFeatCode_answersList  = (null == casFeat_answersList) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_answersList).getCode();
 
   }
 }

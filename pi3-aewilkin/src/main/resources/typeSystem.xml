@@ -97,7 +97,7 @@
       </features>
     </typeDescription>
   <typeDescription>
-      <name>InputDocument</name>
+      <name>type.InputDocument</name>
       <description/>
       <supertypeName>type.ComponentAnnotation</supertypeName>
       <features>
@@ -116,6 +116,12 @@
           <name>answer</name>
           <description/>
           <rangeTypeName>type.Answer</rangeTypeName>
+        </featureDescription>
+      <featureDescription>
+          <name>answersList</name>
+          <description/>
+          <rangeTypeName>uima.cas.FSList</rangeTypeName>
+          <elementType>type.Answer</elementType>
         </featureDescription>
       </features>
     </typeDescription>

@@ -7,12 +7,15 @@ import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.JCasRegistry;
 import org.apache.uima.jcas.cas.TOP_Type;
 
+import org.apache.uima.jcas.cas.FSArray;
+
+
 import org.apache.uima.jcas.cas.FSList;
 
 
-/** Stores a question and its associated answer candidates.
- * Updated by JCasGen Mon Sep 21 02:26:32 EDT 2015
- * XML source: /home/perilon/git/pi3-aewilkin/pi3-aewilkin/desc/aaeDescriptor.xml
+/** 
+ * Updated by JCasGen Mon Sep 21 11:56:31 EDT 2015
+ * XML source: /home/perilon/git/pi3-aewilkin/pi3-aewilkin/src/main/resources/typeSystem.xml
  * @generated */
 public class InputDocument extends ComponentAnnotation {
   /** @generated
@@ -99,25 +102,91 @@ public class InputDocument extends ComponentAnnotation {
    
     
   //*--------------*
-  //* Feature: answers
+  //* Feature: answersArray
 
-  /** getter for answers - gets 
+  /** getter for answersArray - gets 
    * @generated
    * @return value of the feature 
    */
-  public FSList getAnswers() {
-    if (InputDocument_Type.featOkTst && ((InputDocument_Type)jcasType).casFeat_answers == null)
-      jcasType.jcas.throwFeatMissing("answers", "type.InputDocument");
-    return (FSList)(jcasType.ll_cas.ll_getFSForRef(jcasType.ll_cas.ll_getRefValue(addr, ((InputDocument_Type)jcasType).casFeatCode_answers)));}
+  public FSArray getAnswersArray() {
+    if (InputDocument_Type.featOkTst && ((InputDocument_Type)jcasType).casFeat_answersArray == null)
+      jcasType.jcas.throwFeatMissing("answersArray", "type.InputDocument");
+    return (FSArray)(jcasType.ll_cas.ll_getFSForRef(jcasType.ll_cas.ll_getRefValue(addr, ((InputDocument_Type)jcasType).casFeatCode_answersArray)));}
     
-  /** setter for answers - sets  
+  /** setter for answersArray - sets  
    * @generated
    * @param v value to set into the feature 
    */
-  public void setAnswers(FSList v) {
-    if (InputDocument_Type.featOkTst && ((InputDocument_Type)jcasType).casFeat_answers == null)
-      jcasType.jcas.throwFeatMissing("answers", "type.InputDocument");
-    jcasType.ll_cas.ll_setRefValue(addr, ((InputDocument_Type)jcasType).casFeatCode_answers, jcasType.ll_cas.ll_getFSRef(v));}    
+  public void setAnswersArray(FSArray v) {
+    if (InputDocument_Type.featOkTst && ((InputDocument_Type)jcasType).casFeat_answersArray == null)
+      jcasType.jcas.throwFeatMissing("answersArray", "type.InputDocument");
+    jcasType.ll_cas.ll_setRefValue(addr, ((InputDocument_Type)jcasType).casFeatCode_answersArray, jcasType.ll_cas.ll_getFSRef(v));}    
+    
+  /** indexed getter for answersArray - gets an indexed value - 
+   * @generated
+   * @param i index in the array to get
+   * @return value of the element at index i 
+   */
+  public Answer getAnswersArray(int i) {
+    if (InputDocument_Type.featOkTst && ((InputDocument_Type)jcasType).casFeat_answersArray == null)
+      jcasType.jcas.throwFeatMissing("answersArray", "type.InputDocument");
+    jcasType.jcas.checkArrayBounds(jcasType.ll_cas.ll_getRefValue(addr, ((InputDocument_Type)jcasType).casFeatCode_answersArray), i);
+    return (Answer)(jcasType.ll_cas.ll_getFSForRef(jcasType.ll_cas.ll_getRefArrayValue(jcasType.ll_cas.ll_getRefValue(addr, ((InputDocument_Type)jcasType).casFeatCode_answersArray), i)));}
+
+  /** indexed setter for answersArray - sets an indexed value - 
+   * @generated
+   * @param i index in the array to set
+   * @param v value to set into the array 
+   */
+  public void setAnswersArray(int i, Answer v) { 
+    if (InputDocument_Type.featOkTst && ((InputDocument_Type)jcasType).casFeat_answersArray == null)
+      jcasType.jcas.throwFeatMissing("answersArray", "type.InputDocument");
+    jcasType.jcas.checkArrayBounds(jcasType.ll_cas.ll_getRefValue(addr, ((InputDocument_Type)jcasType).casFeatCode_answersArray), i);
+    jcasType.ll_cas.ll_setRefArrayValue(jcasType.ll_cas.ll_getRefValue(addr, ((InputDocument_Type)jcasType).casFeatCode_answersArray), i, jcasType.ll_cas.ll_getFSRef(v));}
+   
+    
+  //*--------------*
+  //* Feature: answer
+
+  /** getter for answer - gets 
+   * @generated
+   * @return value of the feature 
+   */
+  public Answer getAnswer() {
+    if (InputDocument_Type.featOkTst && ((InputDocument_Type)jcasType).casFeat_answer == null)
+      jcasType.jcas.throwFeatMissing("answer", "type.InputDocument");
+    return (Answer)(jcasType.ll_cas.ll_getFSForRef(jcasType.ll_cas.ll_getRefValue(addr, ((InputDocument_Type)jcasType).casFeatCode_answer)));}
+    
+  /** setter for answer - sets  
+   * @generated
+   * @param v value to set into the feature 
+   */
+  public void setAnswer(Answer v) {
+    if (InputDocument_Type.featOkTst && ((InputDocument_Type)jcasType).casFeat_answer == null)
+      jcasType.jcas.throwFeatMissing("answer", "type.InputDocument");
+    jcasType.ll_cas.ll_setRefValue(addr, ((InputDocument_Type)jcasType).casFeatCode_answer, jcasType.ll_cas.ll_getFSRef(v));}    
+   
+    
+  //*--------------*
+  //* Feature: answersList
+
+  /** getter for answersList - gets 
+   * @generated
+   * @return value of the feature 
+   */
+  public FSList getAnswersList() {
+    if (InputDocument_Type.featOkTst && ((InputDocument_Type)jcasType).casFeat_answersList == null)
+      jcasType.jcas.throwFeatMissing("answersList", "type.InputDocument");
+    return (FSList)(jcasType.ll_cas.ll_getFSForRef(jcasType.ll_cas.ll_getRefValue(addr, ((InputDocument_Type)jcasType).casFeatCode_answersList)));}
+    
+  /** setter for answersList - sets  
+   * @generated
+   * @param v value to set into the feature 
+   */
+  public void setAnswersList(FSList v) {
+    if (InputDocument_Type.featOkTst && ((InputDocument_Type)jcasType).casFeat_answersList == null)
+      jcasType.jcas.throwFeatMissing("answersList", "type.InputDocument");
+    jcasType.ll_cas.ll_setRefValue(addr, ((InputDocument_Type)jcasType).casFeatCode_answersList, jcasType.ll_cas.ll_getFSRef(v));}    
   }
 
     
