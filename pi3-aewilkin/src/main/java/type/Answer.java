@@ -10,8 +10,8 @@ import org.apache.uima.jcas.cas.TOP_Type;
 
 
 /** Stores the information about an answer.
- * Updated by JCasGen Mon Sep 21 00:09:54 EDT 2015
- * XML source: /home/perilon/git/pi3-aewilkin/pi3-aewilkin/desc/aaeDescriptor.xml
+ * Updated by JCasGen Mon Sep 21 01:49:26 EDT 2015
+ * XML source: /home/perilon/git/pi3-aewilkin/pi3-aewilkin/src/main/resources/typeSystem.xml
  * @generated */
 public class Answer extends ComponentAnnotation {
   /** @generated

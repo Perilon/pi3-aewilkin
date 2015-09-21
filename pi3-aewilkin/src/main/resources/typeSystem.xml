@@ -35,7 +35,7 @@
         <featureDescription>
           <name>answers</name>
           <description/>
-          <rangeTypeName>uima.cas.FSList</rangeTypeName>
+          <rangeTypeName>uima.cas.FSArray</rangeTypeName>
           <elementType>type.Answer</elementType>
         </featureDescription>
       </features>
