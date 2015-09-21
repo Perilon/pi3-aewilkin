@@ -1,4 +1,4 @@
-04:36:20.743 - 31: org.apache.uima.analysis_engine.impl.PrimitiveAnalysisEngine_impl.callAnalysisComponentProcess(417): SEVERE: Exception occurred
+04:05:09.222 - 31: org.apache.uima.analysis_engine.impl.PrimitiveAnalysisEngine_impl.callAnalysisComponentProcess(417): SEVERE: Exception occurred
 org.apache.uima.analysis_engine.AnalysisEngineProcessException: Annotator processing failed.    
 	at org.apache.uima.analysis_engine.impl.PrimitiveAnalysisEngine_impl.callAnalysisComponentProcess(PrimitiveAnalysisEngine_impl.java:401)
 	at org.apache.uima.analysis_engine.impl.PrimitiveAnalysisEngine_impl.processAndOutputNewCASes(PrimitiveAnalysisEngine_impl.java:308)
@@ -13,13 +13,20 @@ org.apache.uima.analysis_engine.AnalysisEngineProcessException: Annotator proces
 	at org.apache.uima.analysis_engine.impl.AnalysisEngineImplBase.process(AnalysisEngineImplBase.java:269)
 	at org.apache.uima.collection.impl.cpm.engine.ProcessingUnit.processNext(ProcessingUnit.java:893)
 	at org.apache.uima.collection.impl.cpm.engine.ProcessingUnit.run(ProcessingUnit.java:575)
-Caused by: java.lang.ArrayIndexOutOfBoundsException: 2
-	at InputDocumentAnnotator.process(InputDocumentAnnotator.java:114)
+Caused by: org.apache.uima.cas.CASRuntimeException: JCas type "InputDocument" used in Java code,  but was not declared in the XML type descriptor.
+	at org.apache.uima.jcas.impl.JCasImpl.getTypeInit(JCasImpl.java:435)
+	at org.apache.uima.jcas.impl.JCasImpl.getType(JCasImpl.java:408)
+	at org.apache.uima.jcas.cas.TOP.<init>(TOP.java:96)
+	at org.apache.uima.jcas.cas.AnnotationBase.<init>(AnnotationBase.java:66)
+	at org.apache.uima.jcas.tcas.Annotation.<init>(Annotation.java:54)
+	at type.ComponentAnnotation.<init>(ComponentAnnotation.java:52)
+	at InputDocument.<init>(InputDocument.java:54)
+	at InputDocumentAnnotator.process(InputDocumentAnnotator.java:43)
 	at org.apache.uima.analysis_component.JCasAnnotator_ImplBase.process(JCasAnnotator_ImplBase.java:48)
 	at org.apache.uima.analysis_engine.impl.PrimitiveAnalysisEngine_impl.callAnalysisComponentProcess(PrimitiveAnalysisEngine_impl.java:385)
 	... 12 more
 
-04:36:20.762 - 31: org.apache.uima.analysis_engine.impl.AggregateAnalysisEngine_impl.processAndOutputNewCASes(273): SEVERE: Exception occurred
+04:05:09.236 - 31: org.apache.uima.analysis_engine.impl.AggregateAnalysisEngine_impl.processAndOutputNewCASes(273): SEVERE: Exception occurred
 org.apache.uima.analysis_engine.AnalysisEngineProcessException: Annotator processing failed.    
 	at org.apache.uima.analysis_engine.impl.PrimitiveAnalysisEngine_impl.callAnalysisComponentProcess(PrimitiveAnalysisEngine_impl.java:401)
 	at org.apache.uima.analysis_engine.impl.PrimitiveAnalysisEngine_impl.processAndOutputNewCASes(PrimitiveAnalysisEngine_impl.java:308)
@@ -34,13 +41,20 @@ org.apache.uima.analysis_engine.AnalysisEngineProcessException: Annotator proces
 	at org.apache.uima.analysis_engine.impl.AnalysisEngineImplBase.process(AnalysisEngineImplBase.java:269)
 	at org.apache.uima.collection.impl.cpm.engine.ProcessingUnit.processNext(ProcessingUnit.java:893)
 	at org.apache.uima.collection.impl.cpm.engine.ProcessingUnit.run(ProcessingUnit.java:575)
-Caused by: java.lang.ArrayIndexOutOfBoundsException: 2
-	at InputDocumentAnnotator.process(InputDocumentAnnotator.java:114)
+Caused by: org.apache.uima.cas.CASRuntimeException: JCas type "InputDocument" used in Java code,  but was not declared in the XML type descriptor.
+	at org.apache.uima.jcas.impl.JCasImpl.getTypeInit(JCasImpl.java:435)
+	at org.apache.uima.jcas.impl.JCasImpl.getType(JCasImpl.java:408)
+	at org.apache.uima.jcas.cas.TOP.<init>(TOP.java:96)
+	at org.apache.uima.jcas.cas.AnnotationBase.<init>(AnnotationBase.java:66)
+	at org.apache.uima.jcas.tcas.Annotation.<init>(Annotation.java:54)
+	at type.ComponentAnnotation.<init>(ComponentAnnotation.java:52)
+	at InputDocument.<init>(InputDocument.java:54)
+	at InputDocumentAnnotator.process(InputDocumentAnnotator.java:43)
 	at org.apache.uima.analysis_component.JCasAnnotator_ImplBase.process(JCasAnnotator_ImplBase.java:48)
 	at org.apache.uima.analysis_engine.impl.PrimitiveAnalysisEngine_impl.callAnalysisComponentProcess(PrimitiveAnalysisEngine_impl.java:385)
 	... 12 more
 
-04:36:20.762 - 31: org.apache.uima.analysis_engine.impl.AggregateAnalysisEngine_impl.processAndOutputNewCASes(273): SEVERE: Exception occurred
+04:05:09.236 - 31: org.apache.uima.analysis_engine.impl.AggregateAnalysisEngine_impl.processAndOutputNewCASes(273): SEVERE: Exception occurred
 org.apache.uima.analysis_engine.AnalysisEngineProcessException: Annotator processing failed.    
 	at org.apache.uima.analysis_engine.impl.PrimitiveAnalysisEngine_impl.callAnalysisComponentProcess(PrimitiveAnalysisEngine_impl.java:401)
 	at org.apache.uima.analysis_engine.impl.PrimitiveAnalysisEngine_impl.processAndOutputNewCASes(PrimitiveAnalysisEngine_impl.java:308)
@@ -55,14 +69,21 @@ org.apache.uima.analysis_engine.AnalysisEngineProcessException: Annotator proces
 	at org.apache.uima.analysis_engine.impl.AnalysisEngineImplBase.process(AnalysisEngineImplBase.java:269)
 	at org.apache.uima.collection.impl.cpm.engine.ProcessingUnit.processNext(ProcessingUnit.java:893)
 	at org.apache.uima.collection.impl.cpm.engine.ProcessingUnit.run(ProcessingUnit.java:575)
-Caused by: java.lang.ArrayIndexOutOfBoundsException: 2
-	at InputDocumentAnnotator.process(InputDocumentAnnotator.java:114)
+Caused by: org.apache.uima.cas.CASRuntimeException: JCas type "InputDocument" used in Java code,  but was not declared in the XML type descriptor.
+	at org.apache.uima.jcas.impl.JCasImpl.getTypeInit(JCasImpl.java:435)
+	at org.apache.uima.jcas.impl.JCasImpl.getType(JCasImpl.java:408)
+	at org.apache.uima.jcas.cas.TOP.<init>(TOP.java:96)
+	at org.apache.uima.jcas.cas.AnnotationBase.<init>(AnnotationBase.java:66)
+	at org.apache.uima.jcas.tcas.Annotation.<init>(Annotation.java:54)
+	at type.ComponentAnnotation.<init>(ComponentAnnotation.java:52)
+	at InputDocument.<init>(InputDocument.java:54)
+	at InputDocumentAnnotator.process(InputDocumentAnnotator.java:43)
 	at org.apache.uima.analysis_component.JCasAnnotator_ImplBase.process(JCasAnnotator_ImplBase.java:48)
 	at org.apache.uima.analysis_engine.impl.PrimitiveAnalysisEngine_impl.callAnalysisComponentProcess(PrimitiveAnalysisEngine_impl.java:385)
 	... 12 more
 
-04:36:20.778 - 31: org.apache.uima.collection.impl.cpm.engine.ProcessingUnit.process: SEVERE: The container DocumentAnalyzerAE returned the following error message: Annotator processing failed.     (Thread Name: [CasConsumer Pipeline Thread]::) 
-04:36:20.779 - 31: org.apache.uima.collection.impl.cpm.engine.ProcessingUnit.maybeLogSevereException(2498): SEVERE: Thread: [CasConsumer Pipeline Thread]::, message: Annotator processing failed.    
+04:05:09.246 - 31: org.apache.uima.collection.impl.cpm.engine.ProcessingUnit.process: SEVERE: The container DocumentAnalyzerAE returned the following error message: Annotator processing failed.     (Thread Name: [CasConsumer Pipeline Thread]::) 
+04:05:09.246 - 31: org.apache.uima.collection.impl.cpm.engine.ProcessingUnit.maybeLogSevereException(2498): SEVERE: Thread: [CasConsumer Pipeline Thread]::, message: Annotator processing failed.    
 org.apache.uima.analysis_engine.AnalysisEngineProcessException: Annotator processing failed.    
 	at org.apache.uima.analysis_engine.impl.PrimitiveAnalysisEngine_impl.callAnalysisComponentProcess(PrimitiveAnalysisEngine_impl.java:401)
 	at org.apache.uima.analysis_engine.impl.PrimitiveAnalysisEngine_impl.processAndOutputNewCASes(PrimitiveAnalysisEngine_impl.java:308)
@@ -77,24 +98,31 @@ org.apache.uima.analysis_engine.AnalysisEngineProcessException: Annotator proces
 	at org.apache.uima.analysis_engine.impl.AnalysisEngineImplBase.process(AnalysisEngineImplBase.java:269)
 	at org.apache.uima.collection.impl.cpm.engine.ProcessingUnit.processNext(ProcessingUnit.java:893)
 	at org.apache.uima.collection.impl.cpm.engine.ProcessingUnit.run(ProcessingUnit.java:575)
-Caused by: java.lang.ArrayIndexOutOfBoundsException: 2
-	at InputDocumentAnnotator.process(InputDocumentAnnotator.java:114)
+Caused by: org.apache.uima.cas.CASRuntimeException: JCas type "InputDocument" used in Java code,  but was not declared in the XML type descriptor.
+	at org.apache.uima.jcas.impl.JCasImpl.getTypeInit(JCasImpl.java:435)
+	at org.apache.uima.jcas.impl.JCasImpl.getType(JCasImpl.java:408)
+	at org.apache.uima.jcas.cas.TOP.<init>(TOP.java:96)
+	at org.apache.uima.jcas.cas.AnnotationBase.<init>(AnnotationBase.java:66)
+	at org.apache.uima.jcas.tcas.Annotation.<init>(Annotation.java:54)
+	at type.ComponentAnnotation.<init>(ComponentAnnotation.java:52)
+	at InputDocument.<init>(InputDocument.java:54)
+	at InputDocumentAnnotator.process(InputDocumentAnnotator.java:43)
 	at org.apache.uima.analysis_component.JCasAnnotator_ImplBase.process(JCasAnnotator_ImplBase.java:48)
 	at org.apache.uima.analysis_engine.impl.PrimitiveAnalysisEngine_impl.callAnalysisComponentProcess(PrimitiveAnalysisEngine_impl.java:385)
 	... 12 more
 
-04:36:22.10 - 31: org.apache.uima.collection.impl.cpm.engine.ProcessingUnit.process: WARNING: The CAS is being dropped due to the CPM error handling configuration. (Thread Name: [CasConsumer Pipeline Thread]::) Container Name: DocumentAnalyzerAE Cas Processor: org.apache.uima.analysis_engine.impl.AggregateAnalysisEngine_impl
-04:36:22.17 - 31: org.apache.uima.collection.impl.cpm.container.ProcessingContainer_Impl.process: SEVERE: The CPM stopped because the configured error threshold 0 was exceeded. (Thread Name: [CasConsumer Pipeline Thread]::) Component Name: DocumentAnalyzerAE 
-04:36:22.17 - 31: org.apache.uima.collection.impl.cpm.engine.ProcessingUnit.process: SEVERE: The CPM is terminating. The current component is DocumentAnalyzerAE. (Thread Name: [CasConsumer Pipeline Thread]::) 
-04:36:22.35 - 31: org.apache.uima.collection.impl.cpm.engine.ProcessingUnit.process: WARNING: The CPM cannot be stopped by force. The current container is DocumentAnalyzerAE. (Thread Name: [CasConsumer Pipeline Thread]::) Reason: The CAS processor DocumentAnalyzerAE is configured to stop the CPM when excessive errors are encountered.  (Thread Name: [CasConsumer Pipeline Thread]::)
-04:36:22.35 - 31: org.apache.uima.collection.impl.cpm.engine.ProcessingUnit.maybeLogSevereException(2498): SEVERE: Thread: [CasConsumer Pipeline Thread]::, message: 
+04:05:12.161 - 31: org.apache.uima.collection.impl.cpm.engine.ProcessingUnit.process: WARNING: The CAS is being dropped due to the CPM error handling configuration. (Thread Name: [CasConsumer Pipeline Thread]::) Container Name: DocumentAnalyzerAE Cas Processor: org.apache.uima.analysis_engine.impl.AggregateAnalysisEngine_impl
+04:05:12.163 - 31: org.apache.uima.collection.impl.cpm.container.ProcessingContainer_Impl.process: SEVERE: The CPM stopped because the configured error threshold 0 was exceeded. (Thread Name: [CasConsumer Pipeline Thread]::) Component Name: DocumentAnalyzerAE 
+04:05:12.164 - 31: org.apache.uima.collection.impl.cpm.engine.ProcessingUnit.process: SEVERE: The CPM is terminating. The current component is DocumentAnalyzerAE. (Thread Name: [CasConsumer Pipeline Thread]::) 
+04:05:12.186 - 31: org.apache.uima.collection.impl.cpm.engine.ProcessingUnit.process: WARNING: The CPM cannot be stopped by force. The current container is DocumentAnalyzerAE. (Thread Name: [CasConsumer Pipeline Thread]::) Reason: The CAS processor DocumentAnalyzerAE is configured to stop the CPM when excessive errors are encountered.  (Thread Name: [CasConsumer Pipeline Thread]::)
+04:05:12.186 - 31: org.apache.uima.collection.impl.cpm.engine.ProcessingUnit.maybeLogSevereException(2498): SEVERE: Thread: [CasConsumer Pipeline Thread]::, message: 
 org.apache.uima.collection.base_cpm.AbortCPMException: 
 	at org.apache.uima.collection.impl.cpm.container.ProcessingContainer_Impl.incrementCasProcessorErrors(ProcessingContainer_Impl.java:795)
 	at org.apache.uima.collection.impl.cpm.engine.ProcessingUnit.processNext(ProcessingUnit.java:1037)
 	at org.apache.uima.collection.impl.cpm.engine.ProcessingUnit.run(ProcessingUnit.java:575)
 
-04:36:22.40 - 31: org.apache.uima.collection.impl.cpm.engine.CPMEngine.process: INFO: The collection reader thread state is: 1004 (Thread Name: [CasConsumer Pipeline Thread]::) 
-04:36:22.40 - 31: org.apache.uima.collection.impl.cpm.engine.CPMEngine.process: INFO: The CPM processing unit is 0 and processing state 2002. (Thread Name: [CasConsumer Pipeline Thread]::)
-04:36:22.40 - 31: org.apache.uima.collection.impl.cpm.engine.CPMEngine.process: INFO: The CAS consumer thread state is 2003. (Thread Name: [CasConsumer Pipeline Thread]::) 
-04:36:22.40 - 31: org.apache.uima.collection.impl.cpm.engine.CPMEngine.process: INFO: The application stopped the CPM. (Thread Name: [CasConsumer Pipeline Thread]::)
-04:36:22.41 - 31: org.apache.uima.collection.impl.cpm.engine.CPMEngine.process: INFO: The CPM engine is stopping. An end-of-file token is added to the worker queue. (Thread Name: [CasConsumer Pipeline Thread]::) Forced stop: true
+04:05:12.188 - 31: org.apache.uima.collection.impl.cpm.engine.CPMEngine.process: INFO: The collection reader thread state is: 1004 (Thread Name: [CasConsumer Pipeline Thread]::) 
+04:05:12.188 - 31: org.apache.uima.collection.impl.cpm.engine.CPMEngine.process: INFO: The CPM processing unit is 0 and processing state 2002. (Thread Name: [CasConsumer Pipeline Thread]::)
+04:05:12.188 - 31: org.apache.uima.collection.impl.cpm.engine.CPMEngine.process: INFO: The CAS consumer thread state is 2003. (Thread Name: [CasConsumer Pipeline Thread]::) 
+04:05:12.207 - 31: org.apache.uima.collection.impl.cpm.engine.CPMEngine.process: INFO: The application stopped the CPM. (Thread Name: [CasConsumer Pipeline Thread]::)
+04:05:12.208 - 31: org.apache.uima.collection.impl.cpm.engine.CPMEngine.process: INFO: The CPM engine is stopping. An end-of-file token is added to the worker queue. (Thread Name: [CasConsumer Pipeline Thread]::) Forced stop: true

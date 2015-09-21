@@ -29,7 +29,7 @@ import type.InputDocument;
 
 
 public class CasConsumer extends CasConsumer_ImplBase {
-  
+    
   public int n = 3;
   
   /**
@@ -37,7 +37,7 @@ public class CasConsumer extends CasConsumer_ImplBase {
    * output files will be written.
    */
   public static final String PARAM_OUTPUTDIR = "OutputDirectory";
-  public static final int N_VALUE = Integer.parseInt("valueForN");
+//  public static final int N_VALUE = Integer.parseInt("valueForN");
 
 
   private File mOutputDir;
@@ -57,53 +57,57 @@ public class CasConsumer extends CasConsumer_ImplBase {
 
 
   public void processCas(CAS aCAS) throws ResourceProcessException {
+    
     String modelFileName = null;
 
-    JCas aJCas;
+    JCas jcas;
     try {
-      aJCas = aCAS.getJCas();
+      jcas = aCAS.getJCas();
     } catch (CASException e) {
       throw new ResourceProcessException(e);
     }
+    
 
- // retreive the filename of the input file from the CAS
-    FSIterator it = aJCas.getAnnotationIndex(SourceDocumentInformation.type).iterator();
-    File outFile = null;
-    if (it.hasNext()) {
-      SourceDocumentInformation fileLoc = (SourceDocumentInformation) it.next();
-      File inFile;
-      try {
-        inFile = new File(new URL(fileLoc.getUri()).getPath());
-        String outFileName = inFile.getName();
-        if (fileLoc.getOffsetInSource() > 0) {
-          outFileName += ("_" + fileLoc.getOffsetInSource());
-        }
-        outFileName += ".txt";
-        outFile = new File(mOutputDir, outFileName);
-        modelFileName = mOutputDir.getAbsolutePath() + "/" + inFile.getName() + ".ecore";
-      } catch (MalformedURLException e1) {
-        // invalid URL, use default processing below
-      }
-    }
+// // retreive the filename of the input file from the CAS
+//    FSIterator it = jcas.getAnnotationIndex(SourceDocumentInformation.type).iterator();
+//    File outFile = null;
+//    if (it.hasNext()) {
+//      SourceDocumentInformation fileLoc = (SourceDocumentInformation) it.next();
+//      File inFile;
+//      try {
+//        inFile = new File(new URL(fileLoc.getUri()).getPath());
+//        String outFileName = inFile.getName();
+//        if (fileLoc.getOffsetInSource() > 0) {
+//          outFileName += ("_" + fileLoc.getOffsetInSource());
+//        }
+//        outFileName += ".txt";
+//        outFile = new File(mOutputDir, outFileName);
+//        modelFileName = mOutputDir.getAbsolutePath() + "/" + inFile.getName() + ".ecore";
+//      } catch (MalformedURLException e1) {
+//        // invalid URL, use default processing below
+//      }
+//    }
+//    
+//    if (outFile == null) {
+//      outFile = new File(mOutputDir, "doc" + mDocNum++);
+//    }
     
-    if (outFile == null) {
-      outFile = new File(mOutputDir, "doc" + mDocNum++);
-    }
+    FSIndex inputDocumentIndex = jcas.getAnnotationIndex(InputDocument.type);
     
-    FSIndex inputDocumentIndex = aJCas.getAnnotationIndex(InputDocument.type);
+    FSIterator inputDocumentIter = inputDocumentIndex.iterator();
     
-    Iterator inputDocumentIter = inputDocumentIndex.iterator();
    
     
     while (inputDocumentIter.hasNext()) {
       
-      InputDocument inputDocument = new InputDocument(aJCas);
+                  
+      InputDocument inputDocument = new InputDocument(jcas);
       inputDocument = (InputDocument) inputDocumentIter.next();
       
       FSArray unsortedAnswersArray = inputDocument.getAnswersArray();
       int arrayLen = unsortedAnswersArray.size();
       
-      FSArray sortedAnswersArray = new FSArray(aJCas, arrayLen);
+      FSArray sortedAnswersArray = new FSArray(jcas, arrayLen);
 
 //      A crude way of sorting a list by Answer score.
 
@@ -123,11 +127,15 @@ public class CasConsumer extends CasConsumer_ImplBase {
       
       int totalNumCorrect = 0;
       
+      
+      
       for (int i = 0; i < arrayLen; i++) {
         if (((Answer) sortedAnswersArray.get(i)).getLabel() == true) {
           totalNumCorrect++;
         }
       }
+      
+      System.out.println("totalNumCorrect: " + totalNumCorrect);
       
 //      Count the number of sentences within the top n sentences, as ranked in the sorted array, that are correct.
       
@@ -139,6 +147,9 @@ public class CasConsumer extends CasConsumer_ImplBase {
         }
       }
       
+      System.out.println("numCorrectAtN: " + numCorrectAtN);
+
+      
       double precision = numCorrectAtN / totalNumCorrect;
       
       String precisionString = Double.toString(precision);
@@ -147,8 +158,8 @@ public class CasConsumer extends CasConsumer_ImplBase {
       
       System.out.println("Precision is: " + precisionString);
       
-      for (int i = 0; i < totalNumCorrect; i++) {
-        System.out.println(   (((Answer) sortedAnswersArray.get(i)).getId()) + 
+      for (int i = 0; i < totalNumCorrect + 1; i++) {
+        System.out.println(   (((Answer) sortedAnswersArray.get(i)).getId()) + " " +
                 (((Answer) sortedAnswersArray.get(i)).getScore())   );
       }
       

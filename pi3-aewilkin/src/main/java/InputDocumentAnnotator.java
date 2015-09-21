@@ -14,6 +14,7 @@ import type.Answer;
 import type.Question;
 import type.Token;
 import type.Ngram;
+import type.InputDocument;
 
 public class InputDocumentAnnotator extends JCasAnnotator_ImplBase {
 
@@ -24,6 +25,7 @@ public class InputDocumentAnnotator extends JCasAnnotator_ImplBase {
     FSIndex questionIndex = aJCas.getAnnotationIndex(Question.type);
     FSIndex tokenIndex = aJCas.getAnnotationIndex(Token.type);
     FSIndex ngramIndex = aJCas.getAnnotationIndex(Ngram.type);
+    FSIndex inputDocumentIndex = aJCas.getAnnotationIndex(InputDocument.type);
     
     Iterator answerIter0 = answerIndex.iterator();
     
@@ -37,6 +39,10 @@ public class InputDocumentAnnotator extends JCasAnnotator_ImplBase {
     }
     
     FSArray answersArray = new FSArray(aJCas, numAnswers);
+    
+    
+    InputDocument inputDocument = new InputDocument(aJCas);
+    
 
 //    Get the question as an iterator in order to then loop through the answers to compare their ngram contents with those of the question.
     
@@ -122,17 +128,16 @@ public class InputDocumentAnnotator extends JCasAnnotator_ImplBase {
         
         answersArray.set(answerNum-1, answer);
         
+        inputDocument.setAnswer(answer);
+        inputDocument.setAnswersArray(answersArray);
+        inputDocument.setQuestion(question);;
         
-        
-//        Do the same stuff but for an FSlist
-//        
-//        FSList ngramAnswerList2 = new FSList(aJCas);
-//        
-//        for (int i = 0; i < answerListLen; i++) {
-////          ngramAnswerList2.set(i, ngramAnswerList.get(i));
-//          ngramAnswerList2.
+        inputDocument.addToIndexes();
+
         
       }
+      
+      
     }
   }
 

@@ -15,13 +15,6 @@
         <multiValued>false</multiValued>
         <mandatory>true</mandatory>
       </configurationParameter>
-    <configurationParameter>
-        <name>valueForN</name>
-        <description>The value for n, of n-gram fame</description>
-        <type>Integer</type>
-        <multiValued>false</multiValued>
-        <mandatory>false</mandatory>
-      </configurationParameter>
     </configurationParameters>
     <configurationParameterSettings>
       <nameValuePair>
@@ -30,16 +23,11 @@
           <string>/home/perilon/git/pi3-aewilkin/pi3-aewilkin/src/main/resources/outputData</string>
         </value>
       </nameValuePair>
-    <nameValuePair>
-        <name>valueForN</name>
-        <value>
-          <integer>3</integer>
-        </value>
-      </nameValuePair>
     </configurationParameterSettings>
     <typeSystemDescription>
       <imports>
         <import location="/home/perilon/git/pi3-aewilkin/pi3-aewilkin/src/main/resources/typeSystem.xml"/>
+      <import location="/home/perilon/Downloads/uima-working-directory/uimaj-examples/target/classes/org/apache/uima/examples/SourceDocumentInformation.xml"/>
       </imports>
     </typeSystemDescription>
     <typePriorities/>
