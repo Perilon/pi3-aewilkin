@@ -1,4 +1,4 @@
-04:09:55.07 - 39: org.apache.uima.analysis_engine.impl.PrimitiveAnalysisEngine_impl.callAnalysisComponentProcess(417): SEVERE: Exception occurred
+05:40:22.772 - 30: org.apache.uima.analysis_engine.impl.PrimitiveAnalysisEngine_impl.callAnalysisComponentProcess(417): SEVERE: Exception occurred
 org.apache.uima.analysis_engine.AnalysisEngineProcessException: Annotator processing failed.    
 	at org.apache.uima.analysis_engine.impl.PrimitiveAnalysisEngine_impl.callAnalysisComponentProcess(PrimitiveAnalysisEngine_impl.java:401)
 	at org.apache.uima.analysis_engine.impl.PrimitiveAnalysisEngine_impl.processAndOutputNewCASes(PrimitiveAnalysisEngine_impl.java:308)
@@ -6,13 +6,13 @@ org.apache.uima.analysis_engine.AnalysisEngineProcessException: Annotator proces
 	at org.apache.uima.collection.impl.cpm.engine.ProcessingUnit.processNext(ProcessingUnit.java:893)
 	at org.apache.uima.collection.impl.cpm.engine.ProcessingUnit.run(ProcessingUnit.java:575)
 Caused by: java.lang.NullPointerException
-	at CasConsumer.processCas(CasConsumer.java:134)
+	at CasConsumer.processCas(CasConsumer.java:151)
 	at org.apache.uima.analysis_engine.impl.compatibility.CasConsumerAdapter.process(CasConsumerAdapter.java:99)
 	at org.apache.uima.analysis_engine.impl.PrimitiveAnalysisEngine_impl.callAnalysisComponentProcess(PrimitiveAnalysisEngine_impl.java:385)
 	... 4 more
 
-04:09:55.28 - 39: org.apache.uima.collection.impl.cpm.engine.ProcessingUnit.process: SEVERE: The container CasConsumerDescriptor returned the following error message: Annotator processing failed.     (Thread Name: [CasConsumer Pipeline Thread]::) 
-04:09:55.29 - 39: org.apache.uima.collection.impl.cpm.engine.ProcessingUnit.maybeLogSevereException(2498): SEVERE: Thread: [CasConsumer Pipeline Thread]::, message: Annotator processing failed.    
+05:40:22.802 - 30: org.apache.uima.collection.impl.cpm.engine.ProcessingUnit.process: SEVERE: The container CasConsumerDescriptor returned the following error message: Annotator processing failed.     (Thread Name: [CasConsumer Pipeline Thread]::) 
+05:40:22.802 - 30: org.apache.uima.collection.impl.cpm.engine.ProcessingUnit.maybeLogSevereException(2498): SEVERE: Thread: [CasConsumer Pipeline Thread]::, message: Annotator processing failed.    
 org.apache.uima.analysis_engine.AnalysisEngineProcessException: Annotator processing failed.    
 	at org.apache.uima.analysis_engine.impl.PrimitiveAnalysisEngine_impl.callAnalysisComponentProcess(PrimitiveAnalysisEngine_impl.java:401)
 	at org.apache.uima.analysis_engine.impl.PrimitiveAnalysisEngine_impl.processAndOutputNewCASes(PrimitiveAnalysisEngine_impl.java:308)
@@ -20,63 +20,22 @@ org.apache.uima.analysis_engine.AnalysisEngineProcessException: Annotator proces
 	at org.apache.uima.collection.impl.cpm.engine.ProcessingUnit.processNext(ProcessingUnit.java:893)
 	at org.apache.uima.collection.impl.cpm.engine.ProcessingUnit.run(ProcessingUnit.java:575)
 Caused by: java.lang.NullPointerException
-	at CasConsumer.processCas(CasConsumer.java:134)
+	at CasConsumer.processCas(CasConsumer.java:151)
 	at org.apache.uima.analysis_engine.impl.compatibility.CasConsumerAdapter.process(CasConsumerAdapter.java:99)
 	at org.apache.uima.analysis_engine.impl.PrimitiveAnalysisEngine_impl.callAnalysisComponentProcess(PrimitiveAnalysisEngine_impl.java:385)
 	... 4 more
 
-04:09:57.200 - 39: org.apache.uima.collection.impl.cpm.container.ProcessingContainer_Impl.process: SEVERE: The CPM stopped because the configured error threshold 0 was exceeded. (Thread Name: [CasConsumer Pipeline Thread]::) Component Name: CasConsumerDescriptor 
-04:09:57.201 - 39: org.apache.uima.collection.impl.cpm.engine.ProcessingUnit.process: SEVERE: The CPM is terminating. The current component is CasConsumerDescriptor. (Thread Name: [CasConsumer Pipeline Thread]::) 
-04:09:57.235 - 39: org.apache.uima.collection.impl.cpm.engine.ProcessingUnit.process: WARNING: The CPM cannot be stopped by force. The current container is CasConsumerDescriptor. (Thread Name: [CasConsumer Pipeline Thread]::) Reason: The CAS processor CasConsumerDescriptor is configured to stop the CPM when excessive errors are encountered.  (Thread Name: [CasConsumer Pipeline Thread]::)
-04:09:57.236 - 39: org.apache.uima.collection.impl.cpm.engine.ProcessingUnit.maybeLogSevereException(2498): SEVERE: Thread: [CasConsumer Pipeline Thread]::, message: 
+05:40:23.999 - 30: org.apache.uima.collection.impl.cpm.container.ProcessingContainer_Impl.process: SEVERE: The CPM stopped because the configured error threshold 0 was exceeded. (Thread Name: [CasConsumer Pipeline Thread]::) Component Name: CasConsumerDescriptor 
+05:40:24.00 - 30: org.apache.uima.collection.impl.cpm.engine.ProcessingUnit.process: SEVERE: The CPM is terminating. The current component is CasConsumerDescriptor. (Thread Name: [CasConsumer Pipeline Thread]::) 
+05:40:24.20 - 30: org.apache.uima.collection.impl.cpm.engine.ProcessingUnit.process: WARNING: The CPM cannot be stopped by force. The current container is CasConsumerDescriptor. (Thread Name: [CasConsumer Pipeline Thread]::) Reason: The CAS processor CasConsumerDescriptor is configured to stop the CPM when excessive errors are encountered.  (Thread Name: [CasConsumer Pipeline Thread]::)
+05:40:24.21 - 30: org.apache.uima.collection.impl.cpm.engine.ProcessingUnit.maybeLogSevereException(2498): SEVERE: Thread: [CasConsumer Pipeline Thread]::, message: 
 org.apache.uima.collection.base_cpm.AbortCPMException: 
 	at org.apache.uima.collection.impl.cpm.container.ProcessingContainer_Impl.incrementCasProcessorErrors(ProcessingContainer_Impl.java:795)
 	at org.apache.uima.collection.impl.cpm.engine.ProcessingUnit.processNext(ProcessingUnit.java:1037)
 	at org.apache.uima.collection.impl.cpm.engine.ProcessingUnit.run(ProcessingUnit.java:575)
 
-04:09:57.236 - 39: org.apache.uima.collection.impl.cpm.engine.CPMEngine.process: INFO: The collection reader thread state is: 1004 (Thread Name: [CasConsumer Pipeline Thread]::) 
-04:09:57.237 - 39: org.apache.uima.collection.impl.cpm.engine.CPMEngine.process: INFO: The CPM processing unit is 0 and processing state 2002. (Thread Name: [CasConsumer Pipeline Thread]::)
-04:09:57.237 - 39: org.apache.uima.collection.impl.cpm.engine.CPMEngine.process: INFO: The CAS consumer thread state is 2003. (Thread Name: [CasConsumer Pipeline Thread]::) 
-04:09:57.237 - 39: org.apache.uima.collection.impl.cpm.engine.CPMEngine.process: INFO: The application stopped the CPM. (Thread Name: [CasConsumer Pipeline Thread]::)
-04:09:57.237 - 39: org.apache.uima.collection.impl.cpm.engine.CPMEngine.process: INFO: The CPM engine is stopping. An end-of-file token is added to the worker queue. (Thread Name: [CasConsumer Pipeline Thread]::) Forced stop: true
-04:16:07.702 - 47: org.apache.uima.analysis_engine.impl.PrimitiveAnalysisEngine_impl.callAnalysisComponentProcess(417): SEVERE: Exception occurred
-org.apache.uima.analysis_engine.AnalysisEngineProcessException: Annotator processing failed.    
-	at org.apache.uima.analysis_engine.impl.PrimitiveAnalysisEngine_impl.callAnalysisComponentProcess(PrimitiveAnalysisEngine_impl.java:401)
-	at org.apache.uima.analysis_engine.impl.PrimitiveAnalysisEngine_impl.processAndOutputNewCASes(PrimitiveAnalysisEngine_impl.java:308)
-	at org.apache.uima.analysis_engine.impl.AnalysisEngineImplBase.process(AnalysisEngineImplBase.java:269)
-	at org.apache.uima.collection.impl.cpm.engine.ProcessingUnit.processNext(ProcessingUnit.java:893)
-	at org.apache.uima.collection.impl.cpm.engine.ProcessingUnit.run(ProcessingUnit.java:575)
-Caused by: java.lang.NullPointerException
-	at CasConsumer.processCas(CasConsumer.java:134)
-	at org.apache.uima.analysis_engine.impl.compatibility.CasConsumerAdapter.process(CasConsumerAdapter.java:99)
-	at org.apache.uima.analysis_engine.impl.PrimitiveAnalysisEngine_impl.callAnalysisComponentProcess(PrimitiveAnalysisEngine_impl.java:385)
-	... 4 more
-
-04:16:07.704 - 47: org.apache.uima.collection.impl.cpm.engine.ProcessingUnit.process: SEVERE: The container CasConsumerDescriptor returned the following error message: Annotator processing failed.     (Thread Name: [CasConsumer Pipeline Thread]::) 
-04:16:07.704 - 47: org.apache.uima.collection.impl.cpm.engine.ProcessingUnit.maybeLogSevereException(2498): SEVERE: Thread: [CasConsumer Pipeline Thread]::, message: Annotator processing failed.    
-org.apache.uima.analysis_engine.AnalysisEngineProcessException: Annotator processing failed.    
-	at org.apache.uima.analysis_engine.impl.PrimitiveAnalysisEngine_impl.callAnalysisComponentProcess(PrimitiveAnalysisEngine_impl.java:401)
-	at org.apache.uima.analysis_engine.impl.PrimitiveAnalysisEngine_impl.processAndOutputNewCASes(PrimitiveAnalysisEngine_impl.java:308)
-	at org.apache.uima.analysis_engine.impl.AnalysisEngineImplBase.process(AnalysisEngineImplBase.java:269)
-	at org.apache.uima.collection.impl.cpm.engine.ProcessingUnit.processNext(ProcessingUnit.java:893)
-	at org.apache.uima.collection.impl.cpm.engine.ProcessingUnit.run(ProcessingUnit.java:575)
-Caused by: java.lang.NullPointerException
-	at CasConsumer.processCas(CasConsumer.java:134)
-	at org.apache.uima.analysis_engine.impl.compatibility.CasConsumerAdapter.process(CasConsumerAdapter.java:99)
-	at org.apache.uima.analysis_engine.impl.PrimitiveAnalysisEngine_impl.callAnalysisComponentProcess(PrimitiveAnalysisEngine_impl.java:385)
-	... 4 more
-
-04:16:09.520 - 47: org.apache.uima.collection.impl.cpm.container.ProcessingContainer_Impl.process: SEVERE: The CPM stopped because the configured error threshold 0 was exceeded. (Thread Name: [CasConsumer Pipeline Thread]::) Component Name: CasConsumerDescriptor 
-04:16:09.533 - 47: org.apache.uima.collection.impl.cpm.engine.ProcessingUnit.process: SEVERE: The CPM is terminating. The current component is CasConsumerDescriptor. (Thread Name: [CasConsumer Pipeline Thread]::) 
-04:16:09.535 - 47: org.apache.uima.collection.impl.cpm.engine.ProcessingUnit.process: WARNING: The CPM cannot be stopped by force. The current container is CasConsumerDescriptor. (Thread Name: [CasConsumer Pipeline Thread]::) Reason: The CAS processor CasConsumerDescriptor is configured to stop the CPM when excessive errors are encountered.  (Thread Name: [CasConsumer Pipeline Thread]::)
-04:16:09.535 - 47: org.apache.uima.collection.impl.cpm.engine.ProcessingUnit.maybeLogSevereException(2498): SEVERE: Thread: [CasConsumer Pipeline Thread]::, message: 
-org.apache.uima.collection.base_cpm.AbortCPMException: 
-	at org.apache.uima.collection.impl.cpm.container.ProcessingContainer_Impl.incrementCasProcessorErrors(ProcessingContainer_Impl.java:795)
-	at org.apache.uima.collection.impl.cpm.engine.ProcessingUnit.processNext(ProcessingUnit.java:1037)
-	at org.apache.uima.collection.impl.cpm.engine.ProcessingUnit.run(ProcessingUnit.java:575)
-
-04:16:09.536 - 47: org.apache.uima.collection.impl.cpm.engine.CPMEngine.process: INFO: The collection reader thread state is: 1004 (Thread Name: [CasConsumer Pipeline Thread]::) 
-04:16:09.536 - 47: org.apache.uima.collection.impl.cpm.engine.CPMEngine.process: INFO: The CPM processing unit is 0 and processing state 2002. (Thread Name: [CasConsumer Pipeline Thread]::)
-04:16:09.536 - 47: org.apache.uima.collection.impl.cpm.engine.CPMEngine.process: INFO: The CAS consumer thread state is 2003. (Thread Name: [CasConsumer Pipeline Thread]::) 
-04:16:09.536 - 47: org.apache.uima.collection.impl.cpm.engine.CPMEngine.process: INFO: The application stopped the CPM. (Thread Name: [CasConsumer Pipeline Thread]::)
-04:16:09.536 - 47: org.apache.uima.collection.impl.cpm.engine.CPMEngine.process: INFO: The CPM engine is stopping. An end-of-file token is added to the worker queue. (Thread Name: [CasConsumer Pipeline Thread]::) Forced stop: true
+05:40:24.23 - 30: org.apache.uima.collection.impl.cpm.engine.CPMEngine.process: INFO: The collection reader thread state is: 1004 (Thread Name: [CasConsumer Pipeline Thread]::) 
+05:40:24.26 - 30: org.apache.uima.collection.impl.cpm.engine.CPMEngine.process: INFO: The CPM processing unit is 0 and processing state 2002. (Thread Name: [CasConsumer Pipeline Thread]::)
+05:40:24.26 - 30: org.apache.uima.collection.impl.cpm.engine.CPMEngine.process: INFO: The CAS consumer thread state is 2003. (Thread Name: [CasConsumer Pipeline Thread]::) 
+05:40:24.26 - 30: org.apache.uima.collection.impl.cpm.engine.CPMEngine.process: INFO: The application stopped the CPM. (Thread Name: [CasConsumer Pipeline Thread]::)
+05:40:24.27 - 30: org.apache.uima.collection.impl.cpm.engine.CPMEngine.process: INFO: The CPM engine is stopping. An end-of-file token is added to the worker queue. (Thread Name: [CasConsumer Pipeline Thread]::) Forced stop: true
