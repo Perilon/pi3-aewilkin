@@ -10,8 +10,8 @@ import org.apache.uima.jcas.cas.TOP_Type;
 
 
 /** Stores a token annotation.
- * Updated by JCasGen Sun Sep 20 19:21:42 EDT 2015
- * XML source: /home/perilon/git/pi3-aewilkin/pi3-aewilkin/desc/CasConsumerDescriptor.xml
+ * Updated by JCasGen Mon Sep 21 00:09:54 EDT 2015
+ * XML source: /home/perilon/git/pi3-aewilkin/pi3-aewilkin/desc/aaeDescriptor.xml
  * @generated */
 public class Token extends ComponentAnnotation {
   /** @generated
