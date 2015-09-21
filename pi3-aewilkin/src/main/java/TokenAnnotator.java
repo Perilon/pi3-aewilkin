@@ -15,7 +15,7 @@ import type.Token;
 public class TokenAnnotator extends JCasAnnotator_ImplBase {
   
   private Pattern mTokenPattern = 
-          Pattern.compile("[\\S]+");
+          Pattern.compile("([\\S]+)");
 
   @Override
   public void process(JCas aJCas) throws AnalysisEngineProcessException {
@@ -35,8 +35,9 @@ public class TokenAnnotator extends JCasAnnotator_ImplBase {
       while (matcher.find(pos)) {
 //        System.out.println(matcher);
         Token token = new Token(aJCas);
-        token.setBegin(answer.getBegin() + matcher.start());
-        token.setEnd(answer.getBegin() + matcher.end());
+        token.setBegin(answer.getBegin() + matcher.start(1));
+        token.setEnd(answer.getBegin() + matcher.end(1));
+        token.setToStringValue(matcher.group(1));
         token.addToIndexes();
         pos = matcher.end();
       }
@@ -52,8 +53,9 @@ public class TokenAnnotator extends JCasAnnotator_ImplBase {
       while (matcher.find(pos)) {
 //        System.out.println(matcher);
         Token token = new Token(aJCas);
-        token.setBegin(question.getBegin() + matcher.start());
-        token.setEnd(question.getBegin() + matcher.end());
+        token.setBegin(question.getBegin() + matcher.start(1));
+        token.setEnd(question.getBegin() + matcher.end(1));
+        token.setToStringValue(matcher.group(1));
         token.addToIndexes();
         pos = matcher.end();
       }

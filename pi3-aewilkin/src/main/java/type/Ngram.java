@@ -14,7 +14,7 @@ import org.apache.uima.jcas.cas.FSList;
 
 
 /** Stores the information about an n-gram.
- * Updated by JCasGen Mon Sep 21 01:49:26 EDT 2015
+ * Updated by JCasGen Mon Sep 21 04:02:52 EDT 2015
  * XML source: /home/perilon/git/pi3-aewilkin/pi3-aewilkin/src/main/resources/typeSystem.xml
  * @generated */
 public class Ngram extends ComponentAnnotation {
@@ -143,6 +143,28 @@ public class Ngram extends ComponentAnnotation {
       jcasType.jcas.throwFeatMissing("tokens", "type.Ngram");
     jcasType.jcas.checkArrayBounds(jcasType.ll_cas.ll_getRefValue(addr, ((Ngram_Type)jcasType).casFeatCode_tokens), i);
     jcasType.ll_cas.ll_setRefArrayValue(jcasType.ll_cas.ll_getRefValue(addr, ((Ngram_Type)jcasType).casFeatCode_tokens), i, jcasType.ll_cas.ll_getFSRef(v));}
+   
+    
+  //*--------------*
+  //* Feature: toStringValue
+
+  /** getter for toStringValue - gets the ngram as a string
+   * @generated
+   * @return value of the feature 
+   */
+  public String getToStringValue() {
+    if (Ngram_Type.featOkTst && ((Ngram_Type)jcasType).casFeat_toStringValue == null)
+      jcasType.jcas.throwFeatMissing("toStringValue", "type.Ngram");
+    return jcasType.ll_cas.ll_getStringValue(addr, ((Ngram_Type)jcasType).casFeatCode_toStringValue);}
+    
+  /** setter for toStringValue - sets the ngram as a string 
+   * @generated
+   * @param v value to set into the feature 
+   */
+  public void setToStringValue(String v) {
+    if (Ngram_Type.featOkTst && ((Ngram_Type)jcasType).casFeat_toStringValue == null)
+      jcasType.jcas.throwFeatMissing("toStringValue", "type.Ngram");
+    jcasType.ll_cas.ll_setStringValue(addr, ((Ngram_Type)jcasType).casFeatCode_toStringValue, v);}    
   }
 
     

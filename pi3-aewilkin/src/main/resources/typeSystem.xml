@@ -23,27 +23,16 @@
       </features>
     </typeDescription>
     <typeDescription>
-      <name>type.InputDocument</name>
-      <description>Stores a question and its associated answer candidates.</description>
-      <supertypeName>type.ComponentAnnotation</supertypeName>
-      <features>
-        <featureDescription>
-          <name>question</name>
-          <description/>
-          <rangeTypeName>type.Question</rangeTypeName>
-        </featureDescription>
-        <featureDescription>
-          <name>answers</name>
-          <description/>
-          <rangeTypeName>uima.cas.FSArray</rangeTypeName>
-          <elementType>type.Answer</elementType>
-        </featureDescription>
-      </features>
-    </typeDescription>
-    <typeDescription>
       <name>type.Token</name>
       <description>Stores a token annotation.</description>
       <supertypeName>type.ComponentAnnotation</supertypeName>
+    <features>
+        <featureDescription>
+          <name>toStringValue</name>
+          <description>the token as a string</description>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
+      </features>
     </typeDescription>
     <typeDescription>
       <name>type.Question</name>
@@ -99,6 +88,34 @@
           <description>Tokens contained in this n-gram.</description>
           <rangeTypeName>uima.cas.FSArray</rangeTypeName>
           <elementType>type.Token</elementType>
+        </featureDescription>
+      <featureDescription>
+          <name>toStringValue</name>
+          <description>the ngram as a string</description>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
+      </features>
+    </typeDescription>
+  <typeDescription>
+      <name>InputDocument</name>
+      <description/>
+      <supertypeName>type.ComponentAnnotation</supertypeName>
+      <features>
+        <featureDescription>
+          <name>question</name>
+          <description/>
+          <rangeTypeName>type.Question</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>answersArray</name>
+          <description/>
+          <rangeTypeName>uima.cas.FSArray</rangeTypeName>
+          <elementType>type.Answer</elementType>
+        </featureDescription>
+      <featureDescription>
+          <name>answer</name>
+          <description/>
+          <rangeTypeName>type.Answer</rangeTypeName>
         </featureDescription>
       </features>
     </typeDescription>

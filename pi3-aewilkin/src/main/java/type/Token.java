@@ -10,7 +10,7 @@ import org.apache.uima.jcas.cas.TOP_Type;
 
 
 /** Stores a token annotation.
- * Updated by JCasGen Mon Sep 21 01:49:26 EDT 2015
+ * Updated by JCasGen Mon Sep 21 04:02:53 EDT 2015
  * XML source: /home/perilon/git/pi3-aewilkin/pi3-aewilkin/src/main/resources/typeSystem.xml
  * @generated */
 public class Token extends ComponentAnnotation {
@@ -73,6 +73,26 @@ public class Token extends ComponentAnnotation {
    */
   private void readObject() {/*default - does nothing empty block */}
      
-}
+  //*--------------*
+  //* Feature: toStringValue
+
+  /** getter for toStringValue - gets the token as a string
+   * @generated
+   * @return value of the feature 
+   */
+  public String getToStringValue() {
+    if (Token_Type.featOkTst && ((Token_Type)jcasType).casFeat_toStringValue == null)
+      jcasType.jcas.throwFeatMissing("toStringValue", "type.Token");
+    return jcasType.ll_cas.ll_getStringValue(addr, ((Token_Type)jcasType).casFeatCode_toStringValue);}
+    
+  /** setter for toStringValue - sets the token as a string 
+   * @generated
+   * @param v value to set into the feature 
+   */
+  public void setToStringValue(String v) {
+    if (Token_Type.featOkTst && ((Token_Type)jcasType).casFeat_toStringValue == null)
+      jcasType.jcas.throwFeatMissing("toStringValue", "type.Token");
+    jcasType.ll_cas.ll_setStringValue(addr, ((Token_Type)jcasType).casFeatCode_toStringValue, v);}    
+  }
 
     

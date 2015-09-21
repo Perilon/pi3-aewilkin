@@ -13,7 +13,7 @@ import org.apache.uima.cas.impl.FeatureImpl;
 import org.apache.uima.cas.Feature;
 
 /** Stores the information about an n-gram.
- * Updated by JCasGen Mon Sep 21 01:49:26 EDT 2015
+ * Updated by JCasGen Mon Sep 21 04:02:52 EDT 2015
  * @generated */
 public class Ngram_Type extends ComponentAnnotation_Type {
   /** @generated 
@@ -119,6 +119,30 @@ public class Ngram_Type extends ComponentAnnotation_Type {
     ll_cas.ll_setRefArrayValue(ll_cas.ll_getRefValue(addr, casFeatCode_tokens), i, v);
   }
  
+ 
+  /** @generated */
+  final Feature casFeat_toStringValue;
+  /** @generated */
+  final int     casFeatCode_toStringValue;
+  /** @generated
+   * @param addr low level Feature Structure reference
+   * @return the feature value 
+   */ 
+  public String getToStringValue(int addr) {
+        if (featOkTst && casFeat_toStringValue == null)
+      jcas.throwFeatMissing("toStringValue", "type.Ngram");
+    return ll_cas.ll_getStringValue(addr, casFeatCode_toStringValue);
+  }
+  /** @generated
+   * @param addr low level Feature Structure reference
+   * @param v value to set 
+   */    
+  public void setToStringValue(int addr, String v) {
+        if (featOkTst && casFeat_toStringValue == null)
+      jcas.throwFeatMissing("toStringValue", "type.Ngram");
+    ll_cas.ll_setStringValue(addr, casFeatCode_toStringValue, v);}
+    
+  
 
 
 
@@ -138,6 +162,10 @@ public class Ngram_Type extends ComponentAnnotation_Type {
  
     casFeat_tokens = jcas.getRequiredFeatureDE(casType, "tokens", "uima.cas.FSArray", featOkTst);
     casFeatCode_tokens  = (null == casFeat_tokens) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_tokens).getCode();
+
+ 
+    casFeat_toStringValue = jcas.getRequiredFeatureDE(casType, "toStringValue", "uima.cas.String", featOkTst);
+    casFeatCode_toStringValue  = (null == casFeat_toStringValue) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_toStringValue).getCode();
 
   }
 }
