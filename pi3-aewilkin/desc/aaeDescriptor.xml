@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<analysisEngineDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
+  <primitive>false</primitive>  
+  <delegateAnalysisEngineSpecifiers>
+    <delegateAnalysisEngine key="QuestionAnnotatorDescriptor">
+      <import location="/home/perilon/git/pi3-aewilkin/pi3-aewilkin/desc/QuestionAnnotatorDescriptor.xml"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="AnswerAnnotatorDescriptor">
+      <import location="/home/perilon/git/pi3-aewilkin/pi3-aewilkin/desc/AnswerAnnotatorDescriptor.xml"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="TokenAnnotatorDescriptor">
+      <import location="/home/perilon/git/pi3-aewilkin/pi3-aewilkin/desc/TokenAnnotatorDescriptor.xml"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="NGramAnnotatorDescriptor">
+      <import location="/home/perilon/git/pi3-aewilkin/pi3-aewilkin/desc/NGramAnnotatorDescriptor.xml"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="InputDocumentAnnotatorDescriptor">
+      <import location="/home/perilon/git/pi3-aewilkin/pi3-aewilkin/desc/InputDocumentAnnotatorDescriptor.xml"/>
+    </delegateAnalysisEngine>
+  </delegateAnalysisEngineSpecifiers>
+  <analysisEngineMetaData>
+    <name>aaeDescriptor</name>
+    <description/>
+    <version>1.0</version>
+    <vendor/>
+    <configurationParameters/>
+    <configurationParameterSettings/>
+    <flowConstraints>
+      <fixedFlow>
+        <node>QuestionAnnotatorDescriptor</node>
+        <node>AnswerAnnotatorDescriptor</node>
+        <node>TokenAnnotatorDescriptor</node>
+        <node>NGramAnnotatorDescriptor</node>
+        <node>InputDocumentAnnotatorDescriptor</node>
+      </fixedFlow>
+    </flowConstraints>
+    <typePriorities/>
+    <fsIndexCollection/>
+    <capabilities>
+      <capability>
+        <inputs/>
+        <outputs>
+          <type allAnnotatorFeatures="true">type.Token</type>
+          <type allAnnotatorFeatures="true">type.Question</type>
+          <type allAnnotatorFeatures="true">type.Ngram</type>
+          <type allAnnotatorFeatures="true">type.Answer</type>
+          <type allAnnotatorFeatures="true">InputDocument</type>
+        </outputs>
+        <languagesSupported/>
+      </capability>
+    </capabilities>
+  <operationalProperties>
+      <modifiesCas>true</modifiesCas>
+      <multipleDeploymentAllowed>true</multipleDeploymentAllowed>
+      <outputsNewCASes>false</outputsNewCASes>
+    </operationalProperties>
+  </analysisEngineMetaData>
+  <resourceManagerConfiguration/>
+</analysisEngineDescription>
