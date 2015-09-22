@@ -2,11 +2,13 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
+import org.apache.uima.UimaContext;
 import org.apache.uima.analysis_component.JCasAnnotator_ImplBase;
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
 import org.apache.uima.cas.FSIndex;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.cas.FSArray;
+import org.apache.uima.resource.ResourceInitializationException;
 import org.apache.uima.fit.util.JCasUtil;
 
 import type.Answer;
@@ -15,11 +17,25 @@ import type.Token;
 import type.Ngram;
 
 public class NGramAnnotator extends JCasAnnotator_ImplBase {
+   
   
-  public int n = 1;
-
+  final String VALUE_OF_N = "whatShouldNBe";
+  
+  private int n;
+  
+  public void initialize(UimaContext aContext) throws ResourceInitializationException {
+    super.initialize(aContext);
+    // Get config. parameter values
+    String N = (String) aContext.getConfigParameterValue("VALUE_OF_N");
+    n = Integer.parseInt(N);
+  }
+  
+  
+  
   @Override
   public void process(JCas aJCas) throws AnalysisEngineProcessException {
+    
+    
 
     FSIndex answerIndex = aJCas.getAnnotationIndex(Answer.type);
     FSIndex questionIndex = aJCas.getAnnotationIndex(Question.type);

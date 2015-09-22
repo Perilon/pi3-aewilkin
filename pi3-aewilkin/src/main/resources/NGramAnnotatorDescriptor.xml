@@ -7,7 +7,15 @@
     <description/>
     <version>1.0</version>
     <vendor/>
-    <configurationParameters/>
+    <configurationParameters>
+      <configurationParameter>
+        <name>whatShouldNBe</name>
+        <description>Value of n.</description>
+        <type>String</type>
+        <multiValued>false</multiValued>
+        <mandatory>false</mandatory>
+      </configurationParameter>
+    </configurationParameters>
     <configurationParameterSettings/>
     <typeSystemDescription>
       <imports>

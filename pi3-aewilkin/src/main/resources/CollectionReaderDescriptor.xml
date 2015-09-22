@@ -9,20 +9,15 @@
     <vendor/>
     <configurationParameters>
       <configurationParameter>
-        <name>InputDirectory</name>
+        <name>inputDir</name>
+        <description>Input directory.</description>
         <type>String</type>
         <multiValued>false</multiValued>
         <mandatory>false</mandatory>
       </configurationParameter>
     </configurationParameters>
     <configurationParameterSettings>
-      <nameValuePair>
-        <name>InputDirectory</name>
-        <value>
-          <string>/home/perilon/git/pi3-aewilkin/pi3-aewilkin/src/main/resources/inputData</string>
-        </value>
-      </nameValuePair>
-    </configurationParameterSettings>
+      </configurationParameterSettings>
     <typeSystemDescription>
       <imports>
         <import location="/home/perilon/git/pi3-aewilkin/pi3-aewilkin/src/main/resources/typeSystem.xml"/>

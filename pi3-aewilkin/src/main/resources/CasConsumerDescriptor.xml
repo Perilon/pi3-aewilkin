@@ -9,33 +9,28 @@
     <vendor/>
     <configurationParameters searchStrategy="language_fallback">
       <configurationParameter>
-        <name>OutputDirectory</name>
-        <description>Where the output files will be written.</description>
-        <type>String</type>
-        <multiValued>false</multiValued>
-        <mandatory>true</mandatory>
-      </configurationParameter>
-    <configurationParameter>
-        <name>InputDirectory</name>
-        <description>where do the input files come from</description>
+        <name>inputDir</name>
+        <description>Input directory.</description>
         <type>String</type>
         <multiValued>false</multiValued>
         <mandatory>false</mandatory>
       </configurationParameter>
-      </configurationParameters>
+      <configurationParameter>
+        <name>outputDir</name>
+        <description>Output directory.</description>
+        <type>String</type>
+        <multiValued>false</multiValued>
+        <mandatory>false</mandatory>
+      </configurationParameter>
+      <configurationParameter>
+        <name>whatShouldNBe</name>
+        <description>Value for n</description>
+        <type>String</type>
+        <multiValued>false</multiValued>
+        <mandatory>false</mandatory>
+      </configurationParameter>
+    </configurationParameters>
     <configurationParameterSettings>
-      <nameValuePair>
-        <name>OutputDirectory</name>
-        <value>
-          <string>/home/perilon/git/pi3-aewilkin/pi3-aewilkin/src/main/resources/outputData/</string>
-        </value>
-      </nameValuePair>
-    <nameValuePair>
-        <name>InputDirectory</name>
-        <value>
-          <string>/home/perilon/git/pi3-aewilkin/pi3-aewilkin/src/main/resources/inputData/</string>
-        </value>
-      </nameValuePair>
       </configurationParameterSettings>
     <typeSystemDescription>
       <imports>

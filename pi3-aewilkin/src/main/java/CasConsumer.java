@@ -40,17 +40,17 @@ public class CasConsumer extends CasConsumer_ImplBase {
    * Name of configuration parameter that must be set to the path of a directory into which the
    * output files will be written.
    */
-  public static final String PARAM_OUTPUTDIR = "OutputDirectory";
+  public static final String PARAM_OUTPUTDIR = "outputDir";
   
-  public static final String PARAM_INPUTDIR = "InputDirectory";
+  public static final String PARAM_INPUTDIR = "inputDir";
   
-//  public static final String VALUE_OF_N = "nValue";
-//  
-//  String N = (String) getConfigParameterValue(VALUE_OF_N);
-//  
-//  int n = Integer.parseInt(N);
+  public static final String VALUE_OF_N = "whatShouldNBe";
   
-  int n = 1;
+  String N = (String) getConfigParameterValue(VALUE_OF_N);
+  
+  int n = Integer.parseInt(N);
+  
+//  int n = 1;
   
 //  public static final int N_VALUE = Integer.parseInt("valueForN");
 

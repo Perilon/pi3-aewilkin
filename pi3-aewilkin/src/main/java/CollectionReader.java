@@ -20,7 +20,7 @@ public class CollectionReader extends CollectionReader_ImplBase {
    * files.
    */
 //  public static final String PARAM_INPUTDIR = "/home/perilon/git/pi3-aewilkin/pi3-aewilkin/src/main/resources/inputData/";
-  public static final String PARAM_INPUTDIR = "InputDirectory";
+  public static final String PARAM_INPUTDIR = "inputDir";
 
   /**
    * Name of configuration parameter that contains the character encoding used by the input files.

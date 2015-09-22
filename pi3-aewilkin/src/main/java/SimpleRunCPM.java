@@ -100,7 +100,7 @@ public class SimpleRunCPM extends Thread {
     ResourceSpecifier aeSpecifier = UIMAFramework.getXMLParser().parseResourceSpecifier(
             new XMLInputSource("src/main/resources/aaeDescriptor.xml"));
     AnalysisEngine ae = UIMAFramework.produceAnalysisEngine(aeSpecifier);
-    ae.setConfigParameterValue("nValue", args[0]);
+    ae.setConfigParameterValue("whatShouldNBe", args[0]);
     ae.reconfigure();
 
     // CAS Consumer
@@ -108,7 +108,7 @@ public class SimpleRunCPM extends Thread {
     ResourceSpecifier consumerSpecifier = UIMAFramework.getXMLParser().parseCasConsumerDescription(
             new XMLInputSource("src/main/resources/CasConsumerDescriptor.xml"));
     CasConsumer casConsumer = UIMAFramework.produceCasConsumer(consumerSpecifier);
-    casConsumer.getConfigParameterValue("outputDir", args[2]);
+    casConsumer.setConfigParameterValue("outputDir", args[2]);
     casConsumer.reconfigure();
 
     // create a new Collection Processing Manager

@@ -5,6 +5,14 @@
             <descriptor>
                 <import location="CollectionReaderDescriptor.xml"/>
             </descriptor>
+            <configurationParameterSettings>
+                <nameValuePair>
+                    <name>inputDir</name>
+                    <value>
+                        <string>/home/perilon/git/pi3-aewilkin/pi3-aewilkin/src/main/resources/inputData</string>
+                    </value>
+                </nameValuePair>
+            </configurationParameterSettings>
         </collectionIterator>
     </collectionReader>
     <casProcessors casPoolSize="3" processingUnitThreadCount="1">
@@ -31,6 +39,20 @@
             <timeout max="100000" default="-1"/>
         </errorHandling>
         <checkpoint batch="10000" time="1000ms"/>
+        <configurationParameterSettings>
+            <nameValuePair>
+                <name>inputDir</name>
+                <value>
+                    <string>/home/perilon/git/pi3-aewilkin/pi3-aewilkin/src/main/resources/inputData</string>
+                </value>
+            </nameValuePair>
+            <nameValuePair>
+                <name>outputDir</name>
+                <value>
+                    <string>/home/perilon/git/pi3-aewilkin/pi3-aewilkin/src/main/resources/outputData</string>
+                </value>
+            </nameValuePair>
+        </configurationParameterSettings>
     </casProcessor>
     </casProcessors>
     <cpeConfig>
