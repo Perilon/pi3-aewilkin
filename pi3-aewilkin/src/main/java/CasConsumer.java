@@ -35,13 +35,23 @@ import java.io.IOException;
 
 public class CasConsumer extends CasConsumer_ImplBase {
     
-  public int n = 3;
   
   /**
    * Name of configuration parameter that must be set to the path of a directory into which the
    * output files will be written.
    */
   public static final String PARAM_OUTPUTDIR = "OutputDirectory";
+  
+  public static final String PARAM_INPUTDIR = "InputDirectory";
+  
+//  public static final String VALUE_OF_N = "nValue";
+//  
+//  String N = (String) getConfigParameterValue(VALUE_OF_N);
+//  
+//  int n = Integer.parseInt(N);
+  
+  int n = 1;
+  
 //  public static final int N_VALUE = Integer.parseInt("valueForN");
 
 
@@ -114,7 +124,7 @@ public class CasConsumer extends CasConsumer_ImplBase {
     
     while (inputDocumentIter.hasNext()) {
       
-//      System.out.println("\n\n\n\n");
+      System.out.println("\n\n\n\n");
                   
       InputDocument inputDocument = new InputDocument(jcas);
       inputDocument = (InputDocument) inputDocumentIter.next();
@@ -122,7 +132,7 @@ public class CasConsumer extends CasConsumer_ImplBase {
       FSArray unsortedAnswersArray = inputDocument.getAnswersArray();
       int arrayLen = unsortedAnswersArray.size();
       
-//      System.out.println("arrayLen = " + arrayLen);
+      System.out.println("arrayLen = " + arrayLen);
       
       FSArray sortedAnswersArray = new FSArray(jcas, arrayLen);
 
@@ -131,7 +141,7 @@ public class CasConsumer extends CasConsumer_ImplBase {
       int nextIndex = 0;
       int counter = 0;
       
-      for (double maxScore = n; maxScore >= 0; maxScore--) {
+      for (double maxScore = (n+10); maxScore >= 0; maxScore--) {
         for (int i = 0; i < arrayLen; i++) {
           if (((Answer) unsortedAnswersArray.get(i)).getScore() == maxScore) {
             sortedAnswersArray.set(counter, (Answer) unsortedAnswersArray.get(i));
@@ -146,22 +156,22 @@ public class CasConsumer extends CasConsumer_ImplBase {
       
       int sortedAnswersArrayLen = sortedAnswersArray.size();
       
-//      System.out.println("sortedAnswersArrayLen = " + sortedAnswersArrayLen);
-      
-//      for (int i = 0; i < arrayLen; i++) {
-//        System.out.println( (((Answer) sortedAnswersArray.get(i)).getSentence()));
-//        }
-      
-//      System.out.println("arrayLen = " + arrayLen);
+      System.out.println("sortedAnswersArrayLen = " + sortedAnswersArrayLen);
       
       for (int i = 0; i < arrayLen; i++) {
-//        System.out.println("i = " + i);
+        System.out.println( (((Answer) sortedAnswersArray.get(i)).getSentence()));
+        }
+      
+      System.out.println("arrayLen = " + arrayLen);
+      
+      for (int i = 0; i < arrayLen; i++) {
+        System.out.println("i = " + i);
         if (((Answer) sortedAnswersArray.get(i)).getLabel() == true) {
           totalNumCorrect++;
         }
       }
       
-//      System.out.println("totalNumCorrect: " + totalNumCorrect);
+      System.out.println("totalNumCorrect: " + totalNumCorrect);
       
 //      Count the number of sentences within the top n sentences, as ranked in the sorted array, that are correct.
       
@@ -173,7 +183,7 @@ public class CasConsumer extends CasConsumer_ImplBase {
         }
       }
       
-//      System.out.println("numCorrectAtN: " + numCorrectAtN);
+      System.out.println("numCorrectAtN: " + numCorrectAtN);
 
       
       double precision = (double) numCorrectAtN / (double) totalNumCorrect;
@@ -182,12 +192,12 @@ public class CasConsumer extends CasConsumer_ImplBase {
       
 //      Print stuff (?).
       
-//      System.out.println("Precision is: " + precisionString);
+      System.out.println("Precision is: " + precisionString);
       
-//      for (int i = 0; i < totalNumCorrect; i++) {
-//        System.out.println(   (((Answer) sortedAnswersArray.get(i)).getId()) + " " +
-//                (((Answer) sortedAnswersArray.get(i)).getScore())   );
-//      }
+      for (int i = 0; i < totalNumCorrect; i++) {
+        System.out.println(   (((Answer) sortedAnswersArray.get(i)).getId()) + " " +
+                (((Answer) sortedAnswersArray.get(i)).getScore())   );
+      }
       
 //     String filenameString = "/home/perilon/git/pi3-aewilkin/pi3-aewilkin/src/main/resources/outputData/" + writeToFileName;
           

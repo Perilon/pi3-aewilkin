@@ -16,7 +16,7 @@ import type.Ngram;
 
 public class NGramAnnotator extends JCasAnnotator_ImplBase {
   
-  public int n = 3;
+  public int n = 1;
 
   @Override
   public void process(JCas aJCas) throws AnalysisEngineProcessException {

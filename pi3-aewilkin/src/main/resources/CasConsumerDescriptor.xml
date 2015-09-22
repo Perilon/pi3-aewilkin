@@ -15,7 +15,14 @@
         <multiValued>false</multiValued>
         <mandatory>true</mandatory>
       </configurationParameter>
-    </configurationParameters>
+    <configurationParameter>
+        <name>InputDirectory</name>
+        <description>where do the input files come from</description>
+        <type>String</type>
+        <multiValued>false</multiValued>
+        <mandatory>false</mandatory>
+      </configurationParameter>
+      </configurationParameters>
     <configurationParameterSettings>
       <nameValuePair>
         <name>OutputDirectory</name>
@@ -23,7 +30,13 @@
           <string>/home/perilon/git/pi3-aewilkin/pi3-aewilkin/src/main/resources/outputData/</string>
         </value>
       </nameValuePair>
-    </configurationParameterSettings>
+    <nameValuePair>
+        <name>InputDirectory</name>
+        <value>
+          <string>/home/perilon/git/pi3-aewilkin/pi3-aewilkin/src/main/resources/inputData/</string>
+        </value>
+      </nameValuePair>
+      </configurationParameterSettings>
     <typeSystemDescription>
       <imports>
         <import location="/home/perilon/git/pi3-aewilkin/pi3-aewilkin/src/main/resources/typeSystem.xml"/>

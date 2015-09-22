@@ -4,19 +4,19 @@
   <primitive>false</primitive>  
   <delegateAnalysisEngineSpecifiers>
     <delegateAnalysisEngine key="QuestionAnnotatorDescriptor">
-      <import location="/home/perilon/git/pi3-aewilkin/pi3-aewilkin/desc/QuestionAnnotatorDescriptor.xml"/>
+      <import location="/home/perilon/git/pi3-aewilkin/pi3-aewilkin/src/main/resources/QuestionAnnotatorDescriptor.xml"/>
     </delegateAnalysisEngine>
     <delegateAnalysisEngine key="AnswerAnnotatorDescriptor">
-      <import location="/home/perilon/git/pi3-aewilkin/pi3-aewilkin/desc/AnswerAnnotatorDescriptor.xml"/>
+      <import location="/home/perilon/git/pi3-aewilkin/pi3-aewilkin/src/main/resources/AnswerAnnotatorDescriptor.xml"/>
     </delegateAnalysisEngine>
     <delegateAnalysisEngine key="TokenAnnotatorDescriptor">
-      <import location="/home/perilon/git/pi3-aewilkin/pi3-aewilkin/desc/TokenAnnotatorDescriptor.xml"/>
+      <import location="/home/perilon/git/pi3-aewilkin/pi3-aewilkin/src/main/resources/TokenAnnotatorDescriptor.xml"/>
     </delegateAnalysisEngine>
     <delegateAnalysisEngine key="NGramAnnotatorDescriptor">
-      <import location="/home/perilon/git/pi3-aewilkin/pi3-aewilkin/desc/NGramAnnotatorDescriptor.xml"/>
+      <import location="/home/perilon/git/pi3-aewilkin/pi3-aewilkin/src/main/resources/NGramAnnotatorDescriptor.xml"/>
     </delegateAnalysisEngine>
     <delegateAnalysisEngine key="InputDocumentAnnotatorDescriptor">
-      <import location="/home/perilon/git/pi3-aewilkin/pi3-aewilkin/desc/InputDocumentAnnotatorDescriptor.xml"/>
+      <import location="/home/perilon/git/pi3-aewilkin/pi3-aewilkin/src/main/resources/InputDocumentAnnotatorDescriptor.xml"/>
     </delegateAnalysisEngine>
   </delegateAnalysisEngineSpecifiers>
   <analysisEngineMetaData>
@@ -24,7 +24,7 @@
     <description/>
     <version>1.0</version>
     <vendor/>
-    <configurationParameters/>
+    <configurationParameters searchStrategy="none"/>
     <configurationParameterSettings/>
     <flowConstraints>
       <fixedFlow>

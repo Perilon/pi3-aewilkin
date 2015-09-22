@@ -55,7 +55,6 @@ public class CollectionReader extends CollectionReader_ImplBase {
    */
   public void initialize() throws ResourceInitializationException {
     File directory = new File(((String) getConfigParameterValue(PARAM_INPUTDIR)).trim());
-//    File directory = new File("/home/perilon/git/pi3-aewilkin/pi3-aewilkin/src/main/resources/outputData");
     mEncoding  = (String) getConfigParameterValue(PARAM_ENCODING);
     mLanguage  = (String) getConfigParameterValue(PARAM_LANGUAGE);
     mRecursive = (Boolean) getConfigParameterValue(PARAM_SUBDIR);
